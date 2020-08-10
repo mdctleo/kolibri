@@ -193,7 +193,7 @@
         this.showSnackbarNotification('resourceOrderSaved');
       },
       autoSave(id, resources) {
-        this.saveLessonResources({ lessonId: id, resources: resources }).catch(() => {
+        this.saveLessonResources({ lessonId: id, resources: resources }).then(() => {
           this.updateCurrentLesson(id).then(currentLesson => {
             this.setWorkingResources(currentLesson.resources);
           });
